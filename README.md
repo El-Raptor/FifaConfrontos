@@ -1,29 +1,72 @@
-Partidas FIFA19
+# Partidas FIFA19
 
-Funcionalidades:
+## Funcionalidades:
 
--- Painel Resumo --
+### Painel Resumo
 
-Resumo: Exibe uma tabela com os dados entre o jogador referência e seu adversário. Os dados são: quantidade de jogos, vitórias, empates, derrotas, gols feitos pelo jogador referência, gols sofridos do jogador referência, o saldo de gols do jogador referência em relação a este adversário e a porcentagem de vitórias.
+#### Resumo
+Exibe uma tabela com os dados entre o jogador referÃªncia e seu adversÃ¡rio. Os dados sÃ£o:
+* quantidade de jogos;
+* vitÃ³rias;
+* empates;
+* derrotas;
+* gols feitos pelo jogador referÃªncia;
+* gols sofridos do jogador referÃªncia;
+* o saldo de gols do jogador referÃªncia em relaÃ§Ã£o a este adversÃ¡rio;
+* e a porcentagem de vitÃ³rias.
 
-Resumo total: Um resumo com a soma de todos os dados da funcionalidade anterior (mostrado por gráficos). Além de exibir o jogador que mais levou gol do jogador referência, mais fez gol no jogador referência, que mais perdeu para o jogador referência, o que mais ganhou do jogador referência, o que o jogador referência tem a melhor porcentagem de vitórias, o que tem a melhor porcentagem de vitórias em relação ao jogador referência.
+#### Resumo total
+Um resumo com a soma de todos os dados da funcionalidade anterior (mostrado por grÃ¡ficos). AlÃ©m de exibir: 
+* o jogador que mais levou gol do jogador referÃªncia;
+* o jogador que mais fez gol no jogador referÃªncia;
+* o jogador que mais perdeu para o jogador referÃªncia; 
+* o jogador que mais ganhou do jogador referÃªncia; 
+* o jogador com pior porcentagem de vitÃ³rias;
+* o jogador que tem a melhor porcentagem de vitÃ³rias em relaÃ§Ã£o ao jogador referÃªncia.
 
--- Jogos --
+### Jogos
 
-Partidas: Exibe todas as partidas ocorridas.
+#### Partidas
+Exibe todas as partidas ocorridas.
 
-Adversários: Exibe todas as partidas de um adversário selecionado.
+#### AdversÃ¡rios
+Exibe todas as partidas de um adversÃ¡rio selecionado.
 
-Times: Exibe todas as partidas de um time selecionado.
+#### Times
+Exibe todas as partidas de um time selecionado.
 
--- Times --
+### Times
 
-Resumo Times: Exibe os times mais populares (mais utilizados 5 - 6), os mais vitoriosos, o time com o melhor ataque, o time com a melhor defesa, o time com o melhor saldo de gol, o time com melhor aproveitamento, o time com o pior ataque, o time com a pior defesa, o time com o pior saldo de gol.
+#### Resumo Times
+Exibe os times:
+* mais populares (mais utilizados 5 - 6);
+* os mais vitoriosos;
+* o time com o melhor ataque;
+* o time com a melhor defesa;
+* o time com o melhor saldo de gol;
+* o time com melhor aproveitamento;
+* o time com o pior ataque; 
+* o time com a pior defesa;
+* o time com o pior saldo de gol.
 
-Resumo Times por Jogador: Exibe todas as informações da funcionalidade anterior, porém filtrado pelo jogador selecionado.
+#### Resumo Times por Jogador 
+Exibe todas as informaÃ§Ãµes da funcionalidade anterior, porÃ©m filtrado pelo jogador selecionado.
 
-Performance: Exibe a performance de um time selecionado. Suas vitórias, derrotas e empates; gols feitos, gols sofridos e saldo de gols; média de gols feitos e média de gols por partida; e o seu aproveitamento.
+#### Performance
+Exibe a performance de um time selecionado. 
+* VitÃ³rias, derrotas e empates;
+* gols feitos, gols sofridos e saldo de gols;
+* mÃ©dia de gols feitos e mÃ©dia de gols por partida;
+* e o seu aproveitamento.
 
--- Jogadores --
+### Jogadores
 
-Resumo Jogadores: Exibe o resumo do jogador selecionado. Os seus 5 últimos jogos, as suas vitórias, derrotas, empates, gols feito, gols sofridos, saldo de gols, gols feitos por partida, gols sofridos por partida e porcentagem de vitória. No caso do jogador selecionado for o jogador referência, esses dados serão o total de cada dado.
+#### Resumo Jogadores 
+Exibe o resumo do jogador selecionado. 
+* os seus 5 Ãºltimos jogos;
+* as suas vitÃ³rias, derrotas e empates;
+* gols feitos, gols sofridos e saldo de gols;
+* gols feitos por partida e gols sofridos por partida;
+* e porcentagem de vitÃ³ria.
+
+**No caso do jogador selecionado for o jogador referÃªncia, esses dados serÃ£o o total de cada dado.**
