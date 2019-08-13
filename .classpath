@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx12"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jfoenix"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FontAwesomeFX8.9"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
