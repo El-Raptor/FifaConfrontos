@@ -8,8 +8,8 @@ public class Partidas {
 	private String modoDeJogo;
 	private String adversario;
 	private String meuTime;
-	private int golsFeito;
-	private int golsConcedido;
+	private int golsFeitos;
+	private int golsConcedidos;
 	private String timeAdversario;
 	private int penaltisGf;
 	private int penaltisGc;
@@ -44,16 +44,16 @@ public class Partidas {
 		this.meuTime = meuTime;
 	}
 	public int getGolsFeito() {
-		return golsFeito;
+		return golsFeitos;
 	}
 	public void setGolsFeito(int golsFeito) {
-		this.golsFeito = golsFeito;
+		this.golsFeitos = golsFeito;
 	}
 	public int getGolsConcedido() {
-		return golsConcedido;
+		return golsConcedidos;
 	}
 	public void setGolsConcedido(int golsConcedido) {
-		this.golsConcedido = golsConcedido;
+		this.golsConcedidos = golsConcedido;
 	}
 	public String getTimeAdversario() {
 		return timeAdversario;
