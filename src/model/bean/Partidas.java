@@ -3,7 +3,6 @@ package model.bean;
 import java.sql.Date;
 
 public class Partidas {
-	private int matchId;
 	private Date dataPartida;
 	private String modoDeJogo;
 	private String adversario;
@@ -13,12 +12,7 @@ public class Partidas {
 	private String timeAdversario;
 	private int penaltisGf;
 	private int penaltisGc;
-	public int getMatchId() {
-		return matchId;
-	}
-	public void setMatchId(int matchId) {
-		this.matchId = matchId;
-	}
+	
 	public Date getDataPartida() {
 		return dataPartida;
 	}
