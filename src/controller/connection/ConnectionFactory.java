@@ -12,7 +12,7 @@ public class ConnectionFactory {
 	private static final String DRIVER = "org.postgresql.Driver"; 
 	private static final String URL = "jdbc:postgresql://localhost:5432/Fifa confrontos"; 
 	private static final String USER = "postgres"; 
-	private static final String PASS = "BodcoS0"; 
+	private static final String PASS = "BodocoS0"; 
  
 	/** 
 	 * Realiza a conexão com o banco de dados. 
@@ -22,7 +22,7 @@ public class ConnectionFactory {
 			Class.forName(DRIVER); 
 			return DriverManager.getConnection(URL, USER, PASS); 
 		} catch (ClassNotFoundException | SQLException ex) { 
-			throw new RuntimeException("Erro de conex�o: ", ex); 
+			throw new RuntimeException("Erro de conexão: ", ex); 
 		} 
 	} 
  
