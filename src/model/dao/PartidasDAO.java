@@ -13,6 +13,7 @@ import controller.connection.ConnectionFactory;
 import model.bean.Partidas;
 
 public class PartidasDAO {
+	
 	public void create(Partidas partidas) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
