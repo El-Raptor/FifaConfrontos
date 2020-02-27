@@ -1,6 +1,6 @@
 package model.bean;
 
-public class Players {
+public class Player {
 	private String jogador;
 	private int jogos;
 	private int vitorias;

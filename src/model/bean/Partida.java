@@ -2,7 +2,7 @@ package model.bean;
 
 import java.sql.Date;
 
-public class Partidas {
+public class Partida {
 	private Date dataPartida;
 	private String modoDeJogo;
 	private String adversario;

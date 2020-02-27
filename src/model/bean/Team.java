@@ -1,6 +1,6 @@
 package model.bean;
 
-public class Teams {
+public class Team {
 	private String nome;
 	private int jogos;
 	private int vitorias;
