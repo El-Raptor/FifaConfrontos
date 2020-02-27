@@ -1,7 +1,6 @@
 package view;
 
 import java.sql.Date;
-import java.time.format.DateTimeFormatter;
 
 import controller.ListaPartidas;
 import javafx.application.Application;
@@ -61,7 +60,7 @@ public class FifaScores extends Application {
 		txPesquisa.setPromptText("Pesquisa");
 
 		tbPartidas = new TableView<PartidasProperty>();
-		tbPartidas.setPrefHeight(780);
+		tbPartidas.setPrefHeight(580);
 
 		columnDataPartida = new TableColumn<PartidasProperty, Date>();
 		columnModoDeJogo = new TableColumn<PartidasProperty, String>();
@@ -89,7 +88,6 @@ public class FifaScores extends Application {
 		initPartidas();
 		tbPartidas.setItems(listPartidas);
 		
-		final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	}
 
 	private void initPartidas() {
