@@ -72,4 +72,12 @@ public class PartidasDAO {
 		
 		return partidas;
 	}
+	
+	public static void update(Partida... p) {
+		//TODO;
+	}
+	
+	public static void remove(Partida... p) {
+		//TODO;
+	}
 }
