@@ -46,7 +46,7 @@ public class PartidasDAO {
 		List<Partida> partidas = new ArrayList<>();
 		
 		try {
-			stmt = con.prepareStatement("SELECT * FROM confrontos.partidas");
+			stmt = con.prepareStatement("SELECT * FROM confrontos.partidas ORDER BY data_partida DESC");
 			rs = stmt.executeQuery();
 			
 			while (rs.next()) {
