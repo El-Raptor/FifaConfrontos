@@ -1,0 +1,49 @@
+.header {
+	-fx-background-color: rgb(64,7,69);
+}
+
+.side-bar {
+	-fx-background-color: linear-gradient(to bottom, rgb(68,18,72) 30%, rgb(247,38,145) 100%);
+}
+
+.close-btn {
+	-fx-background-color: transparent;
+}
+
+.close-btn:hover{
+	-fx-background-color: #E81123;
+}
+
+.max-btn {
+	-fx-background-color: transparent;
+}
+
+.max-btn:hover {
+	-fx-background-color: #5C2C61;
+}
+
+.min-btn {
+	-fx-background-color: transparent;
+}
+
+.min-btn:hover {
+	-fx-background-color: #5C2C61;
+}
+
+.btn-side-bar {
+	-fx-background-color: transparent;
+}
+
+.btn-side-bar:hover {
+	-fx-background-color: rgba(355,355,355,0.1);
+}
+
+.content-header {
+	-fx-background-color: #E0E0E0;
+	-fx-border-color: black;
+	-fx-border-width: 0.2;
+}
+
+/*#5C2C61
+ * rgb(247,38,145)
+rgb(68,18,72)*/
