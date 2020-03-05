@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 public class TelaResumo extends Application{
 	
 	public void start(Stage stage) throws Exception {
-		Parent parent = FXMLLoader.load(getClass().getResource("TelaResumo.fxml"));
+		Parent parent = FXMLLoader.load(getClass().getResource("Main.fxml"));
 		Scene scene = new Scene(parent);
 		
 		FifaScoresUtil.setStageIcon(stage);
