@@ -44,10 +44,24 @@
 	-fx-border-width: 0.2;
 }
 
-.contetn-pane {
+.content-pane {
 	-fx-background-color: #F0F0F0;
 }
 
+.card {
+	-fx-background-color: #E7E7E7;
+	-fx-background-radius: 4;
+}
+
+.card-header {
+	-fx-background-color: #242424;
+	-fx-background-radius: 4 4 0 0;
+}
+
+.app-bar {
+	-fx-background-color: #00B841;
+	-fx-background-radius: 14,5;
+}
 /*#5C2C61
  * rgb(247,38,145)
 rgb(68,18,72)*/
