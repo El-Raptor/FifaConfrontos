@@ -212,22 +212,26 @@
 								</VBox>
 							</children>
 						</VBox>
-						<VBox fx:id="summaryContent" prefHeight="587.0" prefWidth="770.0" style="-fx-background-color: f0f0f0;">
-							<children>
-								<HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="770.0" styleClass="content-header">
-									<children>
-										<Label text="Resumo">
-											<font>
-												<Font name="Roboto Light" size="26.0" />
-											</font>
-											<HBox.margin>
-												<Insets left="20.0" />
-											</HBox.margin>
-										</Label>
-									</children>
-								</HBox>
-							</children>
-						</VBox>
+                  <AnchorPane fx:id="summaryContent">
+                     <children>
+      						<VBox prefHeight="587.0" prefWidth="770.0" styleClass="contetn-pane">
+      							<children>
+      								<HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="770.0" styleClass="content-header">
+      									<children>
+      										<Label text="Resumo">
+      											<font>
+      												<Font name="Roboto Light" size="26.0" />
+      											</font>
+      											<HBox.margin>
+      												<Insets left="20.0" />
+      											</HBox.margin>
+      										</Label>
+      									</children>
+      								</HBox>
+      							</children>
+      						</VBox>
+                     </children>
+                  </AnchorPane>
 					</children>
 				</HBox>
 			</children>

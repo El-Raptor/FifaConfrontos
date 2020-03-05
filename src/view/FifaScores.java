@@ -84,10 +84,10 @@ public class FifaScores extends Application {
 		columnTimeAdversario.setCellValueFactory(new PropertyValueFactory<PartidasProperty, String>("timeAdversario"));
 		columnPenaltisGf.setCellValueFactory(new PropertyValueFactory<PartidasProperty, Integer>("penaltisGf"));
 		columnPenaltisGc.setCellValueFactory(new PropertyValueFactory<PartidasProperty, Integer>("penaltisGc"));
-		
+
 		initPartidas();
 		tbPartidas.setItems(listPartidas);
-		
+
 	}
 
 	private void initPartidas() {

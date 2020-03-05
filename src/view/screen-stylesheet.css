@@ -44,6 +44,10 @@
 	-fx-border-width: 0.2;
 }
 
+.contetn-pane {
+	-fx-background-color: #F0F0F0;
+}
+
 /*#5C2C61
  * rgb(247,38,145)
 rgb(68,18,72)*/
