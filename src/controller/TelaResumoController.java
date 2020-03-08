@@ -2,6 +2,10 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -19,6 +23,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import model.bean.Player;
+import model.bean.Team;
+import model.dao.TeamsDAO;
 import model.property.PlayersProperty;
 
 public class TelaResumoController implements Initializable {
@@ -80,6 +86,8 @@ public class TelaResumoController implements Initializable {
 		initTblRivals();
 		initTblLayout();
 
+		updateBestTeamStats();
+
 		circularProgressBar.getChildren().addAll(indicator, performanceRate);
 		indicator.setProgress(Double.valueOf(59.0).intValue());
 	}
@@ -90,32 +98,50 @@ public class TelaResumoController implements Initializable {
 		content.getChildren().setAll(pane);
 	}
 
-	private void setTeamBadge(String teamName) {
+	private void updateBestTeamStats() {
+
+		List<Team> mostPlayedTeams = TeamsDAO.readMostPlayedTeams();
+
+		Team bestTeam = Collections.max(mostPlayedTeams, Comparator.comparing(bt -> bt.getAproveitamento()));
+
+		setTeamBadge(bestTeam);
+		setTeamsPerformanceValues(bestTeam);
+	}
+
+	private void setTeamBadge(Team bestTeam) {
 		Image teamBadge = new Image(
 				"file:///C:/Users/Raptor/Documents/Faculdade/Java/FifaConfrontos/FifaConfrontos/src/resources/icons/teams-badges/128x128-badges/"
-						+ teamName + ".png");
+						+ bestTeam.getNome() + ".png");
 		imgTeamBadge.setImage(teamBadge);
 	}
 
-	private void setTeamsPerformanceValues(int jogos, int vitorias, int empates, int derrotas, int gp, int gc,
-			double app) {
-		lblJogosValue.setText(Integer.toString(jogos));
-		lblVitoriasValue.setText(Integer.toString(vitorias));
-		lblEmpatesValue.setText(Integer.toString(empates));
-		lblDerrotasValue.setText(Integer.toString(derrotas));
-		lblGPValue.setText(Integer.toString(gp));
-		lblGCValue.setText(Integer.toString(gc));
-		lblAppValue.setText(Double.toString(app) + "%");
+	private void setTeamsPerformanceValues(Team bestTeam) {
+		lblJogosValue.setText(Integer.toString(bestTeam.getJogos()));
+		lblVitoriasValue.setText(Integer.toString(bestTeam.getVitorias()));
+		lblEmpatesValue.setText(Integer.toString(bestTeam.getEmpates()));
+		lblDerrotasValue.setText(Integer.toString(bestTeam.getDerrotas()));
+		lblGPValue.setText(Integer.toString(bestTeam.getGolsFeitos()));
+		lblGCValue.setText(Integer.toString(bestTeam.getGolsConcedidos()));
+		lblAppValue.setText(Double.toString(bestTeam.getAproveitamento()) + "%");
 	}
 
 	private void performanceBarChart(double winRate, double drawRate, double lossRate) {
 		int winWidth = (int) Math.round(winRate * 434 / 100);
 		int drawWidth = (int) Math.round(drawRate * 434 / 100);
 		int lossWidth = (int) Math.round(lossRate * 434 / 100);
-		
+
 		winBar.setMinWidth(winWidth);
 		drawBar.setMinWidth(drawWidth);
 		lossBar.setMinWidth(lossWidth);
+	}
+
+	private void initPlayers() {
+		PlayersList pl = new PlayersList();
+
+		for (Player p : pl.getPlayers())
+			LIST_PLAYERS.add(new PlayersProperty(p.getJogador(), p.getJogos(), p.getVitorias(), p.getEmpate(),
+					p.getDerrotas(), p.getGolsFeitos(), p.getGolsConcedidos(), p.getAproveitamento()));
+
 	}
 
 	private void initTblRivals() {
@@ -146,15 +172,6 @@ public class TelaResumoController implements Initializable {
 
 		initPlayers();
 		tbRivals.setItems(LIST_PLAYERS);
-	}
-
-	private void initPlayers() {
-		PlayersList pl = new PlayersList();
-
-		for (Player p : pl.getPlayers())
-			LIST_PLAYERS.add(new PlayersProperty(p.getJogador(), p.getJogos(), p.getVitorias(), p.getEmpate(),
-					p.getDerrotas(), p.getGolsFeitos(), p.getGolsConcedidos(), p.getAproveitamento()));
-
 	}
 
 	private void initTblLayout() {
