@@ -10,11 +10,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import controller.connection.ConnectionFactory;
-import model.bean.Partida;
+import model.bean.Match;
 
-public class PartidasDAO {
+public class MatchesDAO {
 	
-	public static void create(Partida partidas) {
+	public static void create(Match partidas) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
@@ -38,19 +38,19 @@ public class PartidasDAO {
 		}
 	}
 	
-	public static List<Partida> read() {
+	public static List<Match> read() {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		List<Partida> partidas = new ArrayList<>();
+		List<Match> partidas = new ArrayList<>();
 		
 		try {
-			stmt = con.prepareStatement("SELECT * FROM confrontos.partidas ORDER BY data_partida DESC");
+			stmt = con.prepareStatement("SELECT * FROM confrontos.partidas ORDER BY (data_partida, match_id) DESC");
 			rs = stmt.executeQuery();
 			
 			while (rs.next()) {
-				Partida partida = new Partida();
+				Match partida = new Match();
 				
 				partida.setDataPartida(rs.getDate("data_partida"));
 				partida.setModoDeJogo(rs.getString("modo_de_jogo"));
@@ -73,11 +73,11 @@ public class PartidasDAO {
 		return partidas;
 	}
 	
-	public static void update(Partida... p) {
+	public static void update(Match... p) {
 		//TODO;
 	}
 	
-	public static void remove(Partida... p) {
+	public static void remove(Match... p) {
 		//TODO;
 	}
 }
