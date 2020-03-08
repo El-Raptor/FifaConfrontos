@@ -2,18 +2,18 @@ package controller;
 
 import java.util.List;
 
-import model.bean.Partida;
-import model.dao.PartidasDAO;
+import model.bean.Match;
+import model.dao.MatchesDAO;
 
 public class ListaPartidas {
-	private static List<Partida> partidas = PartidasDAO.read();
+	private static List<Match> partidas = MatchesDAO.read();
 	
-	public void addPartidas(Partida... ps) {
-		for (Partida p : ps)
-			partidas.add(p);
+	public void addPartidas(Match... matches) {
+		for (Match m : matches)
+			partidas.add(m);
 	}
 	
-	public List<Partida> getPartidas() {
+	public List<Match> getPartidas() {
 		return partidas;
 	}
 }
