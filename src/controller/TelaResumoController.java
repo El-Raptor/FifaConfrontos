@@ -1,7 +1,10 @@
 package controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -59,6 +62,12 @@ public class TelaResumoController implements Initializable {
 	private VBox circularProgressBar;
 	@FXML
 	private VBox tbVBox;
+	@FXML
+	private Label totalGoals;
+	@FXML
+	private Label goalsDifference;
+	@FXML
+	private Label goalsPerGame;
 
 	private TableView<PlayersProperty> tbRivals;
 	private TableColumn<PlayersProperty, String> rivalColumn;
@@ -87,13 +96,14 @@ public class TelaResumoController implements Initializable {
 		initTblLayout();
 
 		updateBestTeamStats();
+		setGoalsStats();
 
 		circularProgressBar.getChildren().addAll(indicator, performanceRate);
 		indicator.setProgress(Double.valueOf(59.0).intValue());
 	}
 
 	@FXML
-	void onBtnAction(MouseEvent event) throws IOException {
+	void melhorTimeOnBtnAction(MouseEvent event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/TelaTimes.fxml"));
 		content.getChildren().setAll(pane);
 	}
@@ -123,6 +133,31 @@ public class TelaResumoController implements Initializable {
 		lblGPValue.setText(Integer.toString(bestTeam.getGolsFeitos()));
 		lblGCValue.setText(Integer.toString(bestTeam.getGolsConcedidos()));
 		lblAppValue.setText(Double.toString(bestTeam.getAproveitamento()) + "%");
+	}
+
+	private void setGoalsStats() {
+		PlayersList pl = new PlayersList();
+
+		List<Player> players = pl.getPlayers();
+
+		int goalsFor = 0;
+		int goalsAgainst = 0;
+		int games = 0;
+
+		for (Player p : players) {
+			goalsFor += p.getGolsConcedidos();
+			goalsAgainst += p.getGolsFeitos();
+			games += p.getJogos();
+		}
+
+		int goalsDiff = goalsFor - goalsAgainst;
+
+		double goalsPg = (double) goalsFor / games;
+		BigDecimal bd = new BigDecimal(goalsPg).setScale(1, RoundingMode.HALF_UP);
+
+		totalGoals.setText(Integer.toString(goalsFor));
+		goalsDifference.setText(Integer.toString(goalsDiff));
+		goalsPerGame.setText(Double.toString(bd.doubleValue()));
 	}
 
 	private void performanceBarChart(double winRate, double drawRate, double lossRate) {

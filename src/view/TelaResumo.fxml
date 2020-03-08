@@ -13,512 +13,512 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="770.0" stylesheets="@screen-stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaResumoController">
-   <children>
-						<VBox prefHeight="587.0" prefWidth="770.0" styleClass="content-pane">
+	<children>
+		<VBox prefHeight="587.0" prefWidth="770.0" styleClass="content-pane">
+			<children>
+				<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="770.0" styleClass="content-header">
+					<children>
+						<Label text="Resumo">
+							<font>
+								<Font name="Roboto Light" size="26.0" />
+							</font>
+							<HBox.margin>
+								<Insets left="20.0" />
+							</HBox.margin>
+						</Label>
+					</children>
+				</HBox>
+				<HBox prefHeight="270.0" prefWidth="770.0">
+					<children>
+						<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="310.0" styleClass="card">
+							<HBox.margin>
+								<Insets left="15.0" top="30.0" />
+							</HBox.margin>
 							<children>
-								<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="770.0" styleClass="content-header">
+								<Label fx:id="headerMelhorTime" graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#melhorTimeOnBtnAction" prefHeight="28.0" prefWidth="310.0" styleClass="card-header" text="Melhor Time" textFill="WHITE">
+									<font>
+										<Font name="Roboto" size="24.0" />
+									</font>
+									<graphic>
+										<ImageView fitHeight="51.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0">
+											<image>
+												<Image url="@../resources/icons/gui-icons/team-icon.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<cursor>
+										<Cursor fx:constant="HAND" />
+									</cursor>
+								</Label>
+								<HBox prefHeight="207.0" prefWidth="310.0">
 									<children>
-										<Label text="Resumo">
-											<font>
-												<Font name="Roboto Light" size="26.0" />
-											</font>
+										<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="155.0">
+											<children>
+												<HBox prefWidth="155.0">
+													<VBox.margin>
+														<Insets top="20.0" />
+													</VBox.margin>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="jogos">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblJogosValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="15" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="vitórias">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblVitoriasValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="10" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="empates">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblEmpatesValue" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="1" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="derrotas">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblDerrotasValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="4" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="gols Pró">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblGPValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="52" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox>
+													<children>
+														<Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="gols Contra">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="4.0" />
+															</HBox.margin>
+														</Label>
+														<Label fx:id="lblGCValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="32" textAlignment="RIGHT">
+															<font>
+																<Font name="Roboto Light" size="17.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="9.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+											</children>
+										</VBox>
+										<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="155.0">
+											<children>
+												<ImageView fx:id="imgTeamBadge" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+													<image>
+														<Image url="@../resources/icons/teams-badges/128x128-badges/Tottenham.png" />
+													</image>
+													<VBox.margin>
+														<Insets top="20.0" />
+													</VBox.margin>
+												</ImageView>
+											</children>
 											<HBox.margin>
-												<Insets left="20.0" />
+												<Insets />
 											</HBox.margin>
-										</Label>
+										</VBox>
 									</children>
 								</HBox>
-            <HBox prefHeight="270.0" prefWidth="770.0">
-               <children>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="310.0" styleClass="card">
-                     <HBox.margin>
-                        <Insets left="15.0" top="30.0" />
-                     </HBox.margin>
-                     <children>
-                        <Label fx:id="headerMelhorTime" graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onBtnAction" prefHeight="28.0" prefWidth="310.0" styleClass="card-header" text="Melhor Time" textFill="WHITE">
-                           <font>
-                              <Font name="Roboto" size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="51.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0">
-                                 <image>
-                                    <Image url="@../resources/icons/gui-icons/team-icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <HBox prefHeight="207.0" prefWidth="310.0">
-                           <children>
-                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="155.0">
-                                 <children>
-                                    <HBox prefWidth="155.0">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="jogos">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblJogosValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="15" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="vitórias">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblVitoriasValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="10" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="empates">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblEmpatesValue" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="1" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="derrotas">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblDerrotasValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="4" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="gols Pró">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblGPValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="52" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="86.0" text="gols Contra">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="4.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <Label fx:id="lblGCValue" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="19.0" text="32" textAlignment="RIGHT">
-                                             <font>
-                                                <Font name="Roboto Light" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="9.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="155.0">
-                                 <children>
-                                    <ImageView fx:id="imgTeamBadge" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/teams-badges/128x128-badges/Tottenham.png" />
-                                       </image>
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                    </ImageView>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <Line endX="93.0" opacity="0.17" startX="-208.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="286.0" styleClass="app-bar">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="143.0">
-                                       <children>
-                                          <Label text="App%" textFill="WHITE">
-                                             <font>
-                                                <Font name="Roboto" size="26.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="11.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="143.0">
-                                       <children>
-                                          <Label fx:id="lblAppValue" text="66.67%" textFill="WHITE">
-                                             <font>
-                                                <Font name="Roboto" size="26.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets right="11.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="412.0" styleClass="card">
-                     <HBox.margin>
-                        <Insets left="14.0" top="30.0" />
-                     </HBox.margin>
-                     <children>
-                        <VBox fx:id="tbVBox" />
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="270.0" prefWidth="770.0">
-               <children>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="180.0" styleClass="card">
-                     <HBox.margin>
-                        <Insets left="15.0" top="15.0" />
-                     </HBox.margin>
-                     <children>
-                        <Label graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="180.0" styleClass="card-header" text="Gols" textFill="WHITE">
-                           <font>
-                              <Font name="Roboto" size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="150.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" translateY="-16.0">
-                                 <image>
-                                    <Image url="@../../gol-icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="410">
-                           <font>
-                              <Font name="Roboto" size="38.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Rectangle>
-                        <Label text="GOLS">
-                           <font>
-                              <Font name="Roboto Thin" size="17.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="118">
-                           <font>
-                              <Font name="Roboto" size="38.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Rectangle>
-                        <Label text="SALDO DE GOLS">
-                           <font>
-                              <Font name="Roboto Thin" size="17.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="410">
-                           <font>
-                              <Font name="Roboto" size="38.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Rectangle>
-                        <Label text="GOLS POR JOGO">
-                           <font>
-                              <Font name="Roboto Thin" size="17.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="8.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="470.0" styleClass="card">
-                     <HBox.margin>
-                        <Insets left="31.0" top="15.0" />
-                     </HBox.margin>
-                     <children>
-                        <Label graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="470.0" styleClass="card-header" text="Desempenho" textFill="WHITE">
-                           <font>
-                              <Font name="Roboto" size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
-                                 <image>
-                                    <Image url="@../../performance-icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="470.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="157.0">
-                                 <children>
-                                    <Label text="90" textFill="#12c350">
-                                       <font>
-                                          <Font name="Century Gothic" size="24.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="18.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label text="VITÓRIAS">
-                                       <font>
-                                          <Font name="Roboto Condensed" size="15.0" />
-                                       </font>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                       <padding>
-                                          <Insets top="4.0" />
-                                       </padding>
-                                       <HBox.margin>
-                                          <Insets left="2.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="156.0">
-                                 <children>
-                                    <Label text="EMPATES">
-                                       <font>
-                                          <Font name="Roboto Condensed" size="15.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets top="4.0" />
-                                       </padding>
-                                       <HBox.margin>
-                                          <Insets right="2.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label text="5" textFill="#6d6d6d">
-                                       <font>
-                                          <Font name="Century Gothic" size="24.0" />
-                                       </font>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="157.0">
-                                 <children>
-                                    <Label text="DERROTAS">
-                                       <font>
-                                          <Font name="Roboto Condensed" size="15.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets top="4.0" />
-                                       </padding>
-                                       <HBox.margin>
-                                          <Insets right="2.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label text="57" textFill="#ff2e1e">
-                                       <font>
-                                          <Font name="Century Gothic" size="24.0" />
-                                       </font>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                       <HBox.margin>
-                                          <Insets right="18.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="434.0">
-                           <VBox.margin>
-                              <Insets left="18.0" right="18.0" />
-                           </VBox.margin>
-                           <children>
-                              <Label fx:id="winBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="260.0" styleClass="win-rate-chart" />
-                              <Label fx:id="drawBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="43.0" styleClass="draw-rate-chart" />
-                              <Label fx:id="lossBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="130.0" styleClass="loss-rate-chart" />
-                           </children>
-                        </HBox>
-                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="434.0">
-                           <VBox.margin>
-                              <Insets left="18.0" top="15.0" />
-                           </VBox.margin>
-                           <children>
-                              <VBox fx:id="circularProgressBar" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="140.0" />
-                              <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="212.0">
-                                 <children>
-                                    <Label text="10 - 0">
-                                       <font>
-                                          <Font name="Roboto Light" size="20.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label text="MAIOR VITÓRIA">
-                                       <font>
-                                          <Font name="Roboto Thin" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="1 - 6">
-                                       <font>
-                                          <Font name="Roboto Light" size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="PIOR DERROTA">
-                                       <font>
-                                          <Font name="Roboto Thin" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="164.0" prefWidth="85.0">
-                                 <children>
-                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font name="Roboto" size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font name="Roboto" size="20.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="4.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font name="Roboto" size="20.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="4.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #ff2e1e;" text="D" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font name="Roboto" size="20.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="4.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #ff2e1e;" text="D" textAlignment="CENTER" textFill="WHITE">
-                                       <font>
-                                          <Font name="Roboto" size="20.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="4.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
+								<HBox alignment="CENTER">
+									<children>
+										<Line endX="93.0" opacity="0.17" startX="-208.0" />
+									</children>
+								</HBox>
+								<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+									<children>
+										<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="286.0" styleClass="app-bar">
+											<children>
+												<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="143.0">
+													<children>
+														<Label text="App%" textFill="WHITE">
+															<font>
+																<Font name="Roboto" size="26.0" />
+															</font>
+															<HBox.margin>
+																<Insets left="11.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+												<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="143.0">
+													<children>
+														<Label fx:id="lblAppValue" text="66.67%" textFill="WHITE">
+															<font>
+																<Font name="Roboto" size="26.0" />
+															</font>
+															<HBox.margin>
+																<Insets right="11.0" />
+															</HBox.margin>
+														</Label>
+													</children>
+												</HBox>
+											</children>
+										</HBox>
+									</children>
+								</HBox>
 							</children>
 						</VBox>
-   </children>
+						<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="412.0" styleClass="card">
+							<HBox.margin>
+								<Insets left="14.0" top="30.0" />
+							</HBox.margin>
+							<children>
+								<VBox fx:id="tbVBox" />
+							</children>
+						</HBox>
+					</children>
+				</HBox>
+				<HBox prefHeight="270.0" prefWidth="770.0">
+					<children>
+						<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="180.0" styleClass="card">
+							<HBox.margin>
+								<Insets left="15.0" top="15.0" />
+							</HBox.margin>
+							<children>
+								<Label graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="180.0" styleClass="card-header" text="Gols" textFill="WHITE">
+									<font>
+										<Font name="Roboto" size="24.0" />
+									</font>
+									<graphic>
+										<ImageView fitHeight="150.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" translateY="-16.0">
+											<image>
+												<Image url="@../../gol-icon.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Label>
+								<Label fx:id="totalGoals" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="410">
+									<font>
+										<Font name="Roboto" size="38.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+								<Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Rectangle>
+								<Label text="GOLS">
+									<font>
+										<Font name="Roboto Thin" size="17.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+								<Label fx:id="goalsDifference" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="118">
+									<font>
+										<Font name="Roboto" size="38.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+								<Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Rectangle>
+								<Label text="SALDO DE GOLS">
+									<font>
+										<Font name="Roboto Thin" size="17.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+								<Label fx:id="goalsPerGame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="80.0" text="410">
+									<font>
+										<Font name="Roboto" size="38.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+								<Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="green-rectangle" width="128.0">
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Rectangle>
+								<Label text="GOLS POR JOGO">
+									<font>
+										<Font name="Roboto Thin" size="17.0" />
+									</font>
+									<VBox.margin>
+										<Insets left="8.0" />
+									</VBox.margin>
+								</Label>
+							</children>
+						</VBox>
+						<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="470.0" styleClass="card">
+							<HBox.margin>
+								<Insets left="31.0" top="15.0" />
+							</HBox.margin>
+							<children>
+								<Label graphicTextGap="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="470.0" styleClass="card-header" text="Desempenho" textFill="WHITE">
+									<font>
+										<Font name="Roboto" size="24.0" />
+									</font>
+									<graphic>
+										<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
+											<image>
+												<Image url="@../../performance-icon.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Label>
+								<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="470.0">
+									<children>
+										<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="157.0">
+											<children>
+												<Label text="90" textFill="#12c350">
+													<font>
+														<Font name="Century Gothic" size="24.0" />
+													</font>
+													<HBox.margin>
+														<Insets left="18.0" />
+													</HBox.margin>
+												</Label>
+												<Label text="VITÓRIAS">
+													<font>
+														<Font name="Roboto Condensed" size="15.0" />
+													</font>
+													<opaqueInsets>
+														<Insets />
+													</opaqueInsets>
+													<padding>
+														<Insets top="4.0" />
+													</padding>
+													<HBox.margin>
+														<Insets left="2.0" />
+													</HBox.margin>
+												</Label>
+											</children>
+										</HBox>
+										<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="156.0">
+											<children>
+												<Label text="EMPATES">
+													<font>
+														<Font name="Roboto Condensed" size="15.0" />
+													</font>
+													<padding>
+														<Insets top="4.0" />
+													</padding>
+													<HBox.margin>
+														<Insets right="2.0" />
+													</HBox.margin>
+												</Label>
+												<Label text="5" textFill="#6d6d6d">
+													<font>
+														<Font name="Century Gothic" size="24.0" />
+													</font>
+													<opaqueInsets>
+														<Insets />
+													</opaqueInsets>
+												</Label>
+											</children>
+										</HBox>
+										<HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="157.0">
+											<children>
+												<Label text="DERROTAS">
+													<font>
+														<Font name="Roboto Condensed" size="15.0" />
+													</font>
+													<padding>
+														<Insets top="4.0" />
+													</padding>
+													<HBox.margin>
+														<Insets right="2.0" />
+													</HBox.margin>
+												</Label>
+												<Label text="57" textFill="#ff2e1e">
+													<font>
+														<Font name="Century Gothic" size="24.0" />
+													</font>
+													<opaqueInsets>
+														<Insets />
+													</opaqueInsets>
+													<HBox.margin>
+														<Insets right="18.0" />
+													</HBox.margin>
+												</Label>
+											</children>
+										</HBox>
+									</children>
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+								</HBox>
+								<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="434.0">
+									<VBox.margin>
+										<Insets left="18.0" right="18.0" />
+									</VBox.margin>
+									<children>
+										<Label fx:id="winBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="260.0" styleClass="win-rate-chart" />
+										<Label fx:id="drawBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="43.0" styleClass="draw-rate-chart" />
+										<Label fx:id="lossBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="9.0" prefWidth="130.0" styleClass="loss-rate-chart" />
+									</children>
+								</HBox>
+								<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="434.0">
+									<VBox.margin>
+										<Insets left="18.0" top="15.0" />
+									</VBox.margin>
+									<children>
+										<VBox fx:id="circularProgressBar" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="140.0" />
+										<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="165.0" prefWidth="212.0">
+											<children>
+												<Label text="10 - 0">
+													<font>
+														<Font name="Roboto Light" size="20.0" />
+													</font>
+													<VBox.margin>
+														<Insets top="20.0" />
+													</VBox.margin>
+												</Label>
+												<Label text="MAIOR VITÓRIA">
+													<font>
+														<Font name="Roboto Thin" size="16.0" />
+													</font>
+												</Label>
+												<Label text="1 - 6">
+													<font>
+														<Font name="Roboto Light" size="20.0" />
+													</font>
+												</Label>
+												<Label text="PIOR DERROTA">
+													<font>
+														<Font name="Roboto Thin" size="16.0" />
+													</font>
+												</Label>
+											</children>
+										</VBox>
+										<VBox alignment="CENTER" prefHeight="164.0" prefWidth="85.0">
+											<children>
+												<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
+													<font>
+														<Font name="Roboto" size="20.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
+													<font>
+														<Font name="Roboto" size="20.0" />
+													</font>
+													<VBox.margin>
+														<Insets top="4.0" />
+													</VBox.margin>
+												</Label>
+												<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #06cf4d;" text="V" textAlignment="CENTER" textFill="WHITE">
+													<font>
+														<Font name="Roboto" size="20.0" />
+													</font>
+													<VBox.margin>
+														<Insets top="4.0" />
+													</VBox.margin>
+												</Label>
+												<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #ff2e1e;" text="D" textAlignment="CENTER" textFill="WHITE">
+													<font>
+														<Font name="Roboto" size="20.0" />
+													</font>
+													<VBox.margin>
+														<Insets top="4.0" />
+													</VBox.margin>
+												</Label>
+												<Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: #ff2e1e;" text="D" textAlignment="CENTER" textFill="WHITE">
+													<font>
+														<Font name="Roboto" size="20.0" />
+													</font>
+													<VBox.margin>
+														<Insets top="4.0" />
+													</VBox.margin>
+												</Label>
+											</children>
+										</VBox>
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</children>
 </AnchorPane>
