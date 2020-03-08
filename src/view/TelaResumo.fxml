@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -243,37 +240,7 @@
                         <Insets left="14.0" top="30.0" />
                      </HBox.margin>
                      <children>
-                        <VBox>
-                           <children>
-                              <TableView prefHeight="235.0" prefWidth="424.0" styleClass="card" stylesheets="@screen-stylesheet.css">
-                                <columns>
-                                  <TableColumn editable="false" minWidth="130.0" prefWidth="130.0" resizable="false" styleClass="first-column" text="Adversário" />
-                                  <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" styleClass="second-column" text="J" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="V" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="E" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="D" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="GF" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" text="GC" />
-                                    <TableColumn editable="false" minWidth="40.0" prefWidth="40.0" resizable="false" sortable="false" styleClass="last-column" text="App%" />
-                                </columns>
-                              </TableView>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" text="Label">
-                                 <graphic>
-                                    <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="2.0" translateY="-231.0">
-                                       <image>
-                                          <Image url="@../../rival-icon.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </ImageView>
-                                 </graphic>
-                              </Label>
-                           </children>
-                        </VBox>
+                        <VBox fx:id="tbVBox" />
                      </children>
                   </HBox>
                </children>

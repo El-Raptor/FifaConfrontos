@@ -63,63 +63,28 @@
 	-fx-background-radius: 14,5;
 }
 
-.table-column {
-	-fx-background-color: #242424;
-	-fx-font: 13px "Roboto";
-	-fx-text-fill: #E7E7E7;
-}
-
-.table-column.first-column {
-	-fx-background-color: #242424;
-	-fx-background-radius: 4 4 0 0;
-	-fx-size: 18px;
-	-fx-padding: 0 0 0 25;
-	-fx-font: 15px "Roboto";
-	-fx-text-fill: #E7E7E7;
-	
-}
-
-.table-column.second-column {
-	-fx-background-color: #242424;
-	-fx-background-radius: 4 0 0 0;
-	-fx-font: 13px "Roboto";
-	-fx-text-fill: #E7E7E7;
-	-fx-margin: 2 0 0 0;
-}
-
-.table-column.last-column {
-	-fx-background-color: #242424;
-	-fx-background-radius: 0 4 0 0;
-
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: white;
-    /*-fx-background-color: -fx-box-border, #F7F7F7;*/
-}
-
 .green-rectangle {
 	-fx-fill: #05a13c;
 	-fx-arc-height: 0;
 }
 
 .win-rate-chart {
-	/*-fx-background-color: linear-gradient(to right, #32fa78, #e2e2e2, #ff2e1e 30);*/
 	-fx-background-color: #32fa78;
 	-fx-background-radius: 4.5 0 0 4.5;
 }
 
 .draw-rate-chart {
-	/*-fx-background-color: linear-gradient(to right, #32fa78, #e2e2e2, #ff2e1e 30);*/
 	-fx-background-color: #898989;
 	-fx-background-radius: 0 0 0 0;
 }
 
 .loss-rate-chart {
-	/*-fx-background-color: linear-gradient(to right, #32fa78, #e2e2e2, #ff2e1e 30);*/
 	-fx-background-color: #ff2e1e;
 	-fx-background-radius: 0 4.5 4.5 0;
 }
+
+
+/*Ring Progress Indicator CSS */
 
 .ringindicator{
 	-fx-ring-width: 7.0;
@@ -155,8 +120,3 @@
 	-fx-font: 22px "Roboto Lt";
 	-fx-margin: 5 0 0 0;
 }
-
-
-/*#5C2C61
- * rgb(247,38,145)
-rgb(68,18,72)*/
