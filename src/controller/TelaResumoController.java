@@ -1,11 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -25,8 +22,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import model.bean.Match;
+import model.bean.MyStats;
 import model.bean.Player;
 import model.bean.Team;
+import model.dao.MatchesDAO;
 import model.dao.TeamsDAO;
 import model.property.PlayersProperty;
 
@@ -68,6 +68,26 @@ public class TelaResumoController implements Initializable {
 	private Label goalsDifference;
 	@FXML
 	private Label goalsPerGame;
+	@FXML
+	private Label lbWinBar;
+	@FXML
+	private Label lbDrawBar;
+	@FXML
+	private Label lbLossBar;
+	@FXML
+	private Label lbBiggestWin;
+	@FXML
+	private Label lbWorstLoss;
+	@FXML
+	private Label formBox1;
+	@FXML
+	private Label formBox2;
+	@FXML
+	private Label formBox3;
+	@FXML
+	private Label formBox4;
+	@FXML
+	private Label formBox5;
 
 	private TableView<PlayersProperty> tbRivals;
 	private TableColumn<PlayersProperty, String> rivalColumn;
@@ -79,6 +99,7 @@ public class TelaResumoController implements Initializable {
 	private TableColumn<PlayersProperty, Integer> goalsAgainstColumn;
 	private TableColumn<PlayersProperty, Double> winRateColumn;
 	private static ObservableList<PlayersProperty> LIST_PLAYERS = FXCollections.observableArrayList();
+	private MyStats ms = new MyStats();
 
 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaResumo.fxml"));
 
@@ -89,17 +110,17 @@ public class TelaResumoController implements Initializable {
 		fxmlLoader.setController(this);
 
 		RingProgressIndicator indicator = new RingProgressIndicator();
-		Label performanceRate = new Label("App%");
+		Label performanceRate = new Label("App");
 		performanceRate.getStyleClass().add("performance-label");
 
 		initTblRivals();
 		initTblLayout();
-
 		updateBestTeamStats();
 		setGoalsStats();
+		injectPerformanceCard();
 
 		circularProgressBar.getChildren().addAll(indicator, performanceRate);
-		indicator.setProgress(Double.valueOf(59.0).intValue());
+		indicator.setProgress(Double.valueOf(ms.getPerfRate()).intValue());
 	}
 
 	@FXML
@@ -136,38 +157,83 @@ public class TelaResumoController implements Initializable {
 	}
 
 	private void setGoalsStats() {
-		PlayersList pl = new PlayersList();
 
-		List<Player> players = pl.getPlayers();
-
-		int goalsFor = 0;
-		int goalsAgainst = 0;
-		int games = 0;
-
-		for (Player p : players) {
-			goalsFor += p.getGolsConcedidos();
-			goalsAgainst += p.getGolsFeitos();
-			games += p.getJogos();
-		}
-
-		int goalsDiff = goalsFor - goalsAgainst;
-
-		double goalsPg = (double) goalsFor / games;
-		BigDecimal bd = new BigDecimal(goalsPg).setScale(1, RoundingMode.HALF_UP);
-
-		totalGoals.setText(Integer.toString(goalsFor));
-		goalsDifference.setText(Integer.toString(goalsDiff));
-		goalsPerGame.setText(Double.toString(bd.doubleValue()));
+		totalGoals.setText(Integer.toString(ms.getGoalsFor()));
+		goalsDifference.setText(Integer.toString(ms.getGoalsDifference()));
+		goalsPerGame.setText(Double.toString(ms.getGoalsPerGame()));
 	}
+	
+	private void injectPerformanceCard() {
+		performanceBarChart();
+		setRecords();
+		setForm();
+	}
+	
+	private void performanceBarChart() {
 
-	private void performanceBarChart(double winRate, double drawRate, double lossRate) {
-		int winWidth = (int) Math.round(winRate * 434 / 100);
-		int drawWidth = (int) Math.round(drawRate * 434 / 100);
-		int lossWidth = (int) Math.round(lossRate * 434 / 100);
+		int winWidth = (int) Math.round(ms.getWinRate() * 434 / 100);
+		int drawWidth = (int) Math.round(ms.getDrawRate() * 434 / 100);
+		int lossWidth = (int) Math.round(ms.getLossRate() * 434 / 100);
 
 		winBar.setMinWidth(winWidth);
 		drawBar.setMinWidth(drawWidth);
 		lossBar.setMinWidth(lossWidth);
+
+		lbWinBar.setText(Integer.toString(ms.getWins()));
+		lbLossBar.setText(Integer.toString(ms.getLosses()));
+		lbDrawBar.setText(Integer.toString(ms.getDraws()));
+	}
+
+	private void setRecords() {
+		List<Match> bw = MatchesDAO.readBiggestWin();
+
+		String golsFeito = Integer.toString(bw.get(0).getGolsFeito());
+		String golsConcedidos = Integer.toString(bw.get(0).getGolsConcedido());
+
+		lbBiggestWin.setText(golsFeito + " - " + golsConcedidos);
+
+		List<Match> bl = MatchesDAO.readWorstLoss();
+
+		golsFeito = Integer.toString(bl.get(0).getGolsFeito());
+		golsConcedidos = Integer.toString(bl.get(0).getGolsConcedido());
+
+		lbWorstLoss.setText(golsFeito + " - " + golsConcedidos);
+
+	}
+
+	private void setForm() {
+		List<Match> matches = MatchesDAO.readForm();
+
+		List<Label> forms = new ArrayList<Label>() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			{
+				add(formBox1);
+				add(formBox2);
+				add(formBox3);
+				add(formBox4);
+				add(formBox5);
+			}
+		};
+
+		int index = 0;
+		for (Match m : matches) {
+			if (m.getGolsFeito() > m.getGolsConcedido()) {
+				forms.get(index).setText("V");
+				forms.get(index).setStyle("-fx-background-color: #06cf4d");
+			} else if (m.getGolsFeito() < m.getGolsConcedido()) {
+				forms.get(index).setText("D");
+				forms.get(index).setStyle("-fx-background-color: #ff2e1e");
+			} else {
+				forms.get(index).setText("E");
+				forms.get(index).setStyle("-fx-background-color: gray");
+			}
+
+			index++;
+		}
 	}
 
 	private void initPlayers() {
@@ -179,6 +245,7 @@ public class TelaResumoController implements Initializable {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private void initTblRivals() {
 		tbRivals = new TableView<PlayersProperty>();
 
@@ -214,7 +281,7 @@ public class TelaResumoController implements Initializable {
 		tbRivals.getStylesheets()
 				.add(TelaResumoController.class.getResource("/view/table-stylesheet.css").toExternalForm());
 
-		rivalColumn.setText("Jogador");
+		rivalColumn.setText("Adversário");
 		rivalColumn.setEditable(false);
 		rivalColumn.setResizable(false);
 		rivalColumn.setSortable(false);
