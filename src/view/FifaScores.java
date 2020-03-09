@@ -55,7 +55,7 @@ public class FifaScores extends Application {
 		pane.setPrefSize(800, 600);
 		pane.setStyle(
 				"-fx-background-color: linear-gradient(to bottom right, rgba(61, 210, 255, 1), rgba(61, 255, 216))");
-
+		
 		txPesquisa = new TextField();
 		txPesquisa.setPromptText("Pesquisa");
 
@@ -84,10 +84,10 @@ public class FifaScores extends Application {
 		columnTimeAdversario.setCellValueFactory(new PropertyValueFactory<PartidasProperty, String>("timeAdversario"));
 		columnPenaltisGf.setCellValueFactory(new PropertyValueFactory<PartidasProperty, Integer>("penaltisGf"));
 		columnPenaltisGc.setCellValueFactory(new PropertyValueFactory<PartidasProperty, Integer>("penaltisGc"));
-		
+
 		initPartidas();
 		tbPartidas.setItems(listPartidas);
-		
+
 	}
 
 	private void initPartidas() {

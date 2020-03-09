@@ -9,7 +9,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class PartidasProperty {
+public class MatchesProperty {
 	private ObjectProperty<Date> dataPartida;
 	private StringProperty modoDeJogo;
 	private StringProperty adversario;
@@ -20,7 +20,7 @@ public class PartidasProperty {
 	private IntegerProperty penaltisGf;
 	private IntegerProperty penaltisGc;
 
-	public PartidasProperty(Date dataPartida, String modoDeJogo, String adversario, String meuTime, Integer golsFeitos,
+	public MatchesProperty(Date dataPartida, String modoDeJogo, String adversario, String meuTime, Integer golsFeitos,
 			Integer golsConcedidos, String timeAdversario, Integer penaltisGf, Integer penaltisGc) {
 		this.dataPartida = new SimpleObjectProperty<Date>(dataPartida);
 		this.modoDeJogo = new SimpleStringProperty(modoDeJogo);

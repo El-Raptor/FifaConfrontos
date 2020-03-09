@@ -8,6 +8,8 @@ public class Player {
 	private int derrotas;
 	private int golsFeitos;
 	private int golsConcedidos;
+	private int saldoDeGols;
+	private double aproveitamento;
 	
 	public String getJogador() {
 		return jogador;
@@ -50,6 +52,18 @@ public class Player {
 	}
 	public void setGolsConcedidos(int golsConcedidos) {
 		this.golsConcedidos = golsConcedidos;
+	}
+	public int getSaldoDeGols() {
+		return saldoDeGols;
+	}
+	public void setSaldoDeGols(int saldoDeGols) {
+		this.saldoDeGols = saldoDeGols;
+	}
+	public double getAproveitamento() {
+		return aproveitamento;
+	}
+	public void setAproveitamento(double aproveitamento) {
+		this.aproveitamento = aproveitamento;
 	}
 	
 	

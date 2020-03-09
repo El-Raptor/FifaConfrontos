@@ -1,0 +1,122 @@
+.header {
+	-fx-background-color: rgb(64,7,69);
+}
+
+.side-bar {
+	-fx-background-color: linear-gradient(to bottom, rgb(68,18,72) 30%, rgb(247,38,145) 100%);
+}
+
+.close-btn {
+	-fx-background-color: transparent;
+}
+
+.close-btn:hover{
+	-fx-background-color: #E81123;
+}
+
+.max-btn {
+	-fx-background-color: transparent;
+}
+
+.max-btn:hover {
+	-fx-background-color: #5C2C61;
+}
+
+.min-btn {
+	-fx-background-color: transparent;
+}
+
+.min-btn:hover {
+	-fx-background-color: #5C2C61;
+}
+
+.btn-side-bar {
+	-fx-background-color: transparent;
+}
+
+.btn-side-bar:hover {
+	-fx-background-color: rgba(355,355,355,0.1);
+}
+
+.content-header {
+	-fx-background-color: #E0E0E0;
+	-fx-border-color: black;
+	-fx-border-width: 0.2;
+}
+
+.content-pane {
+	-fx-background-color: #F0F0F0;
+}
+
+.card {
+	-fx-background-color: #E7E7E7;
+	-fx-background-radius: 4;
+}
+
+.card-header {
+	-fx-background-color: #242424;
+	-fx-background-radius: 4 4 0 0;
+}
+
+.app-bar {
+	-fx-background-color: #00B841;
+	-fx-background-radius: 14,5;
+}
+
+.green-rectangle {
+	-fx-fill: #05a13c;
+	-fx-arc-height: 0;
+}
+
+.win-rate-chart {
+	-fx-background-color: #32fa78;
+	-fx-background-radius: 4.5 0 0 4.5;
+}
+
+.draw-rate-chart {
+	-fx-background-color: #898989;
+	-fx-background-radius: 0 0 0 0;
+}
+
+.loss-rate-chart {
+	-fx-background-color: #ff2e1e;
+	-fx-background-radius: 0 4.5 4.5 0;
+}
+
+
+/*Ring Progress Indicator CSS */
+
+.ringindicator{
+	-fx-ring-width: 7.0;
+	-fx-inner-radius: 43.0;
+}
+.ringindicator-inner-circle {
+	-fx-opacity: 0.5;
+	-fx-stroke: #32a8fa; 
+	-fx-stroke-width: 3.0px;
+	-fx-fill: #E7E7E7;
+}
+.ringindicator-filler {
+	-fx-stroke: #32a8fa; 
+	-fx-fill: #E7E7E7;
+	-fx-stroke-line-cap: butt;
+}
+.ringindicator-outer-circle-secondary {
+	-fx-opacity: 0.1;
+	-fx-stroke: #32a8fa; 
+	-fx-stroke-width: 0px;
+	-fx-fill: #E7E7E7;
+}
+.indeterminate {
+	-fx-opacity: 0.55;
+	-fx-stroke: linear-gradient(from 0.0% 0.0% to 70.0% 70.0%, circleindicator-color 70.0%, white 75.0%, white);
+}
+
+.percent-label {
+	-fx-font: 20px "Century Gothic";
+}
+
+.performance-label {
+	-fx-font: 22px "Roboto Lt";
+	-fx-margin: 5 0 0 0;
+}
