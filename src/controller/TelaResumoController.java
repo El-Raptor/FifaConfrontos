@@ -114,7 +114,6 @@ public class TelaResumoController implements Initializable {
 		performanceRate.getStyleClass().add("performance-label");
 
 		initTblRivals();
-		initTblLayout();
 		updateBestTeamStats();
 		setGoalsStats();
 		injectPerformanceCard();
@@ -162,13 +161,13 @@ public class TelaResumoController implements Initializable {
 		goalsDifference.setText(Integer.toString(ms.getGoalsDifference()));
 		goalsPerGame.setText(Double.toString(ms.getGoalsPerGame()));
 	}
-	
+
 	private void injectPerformanceCard() {
 		performanceBarChart();
 		setRecords();
 		setForm();
 	}
-	
+
 	private void performanceBarChart() {
 
 		int winWidth = (int) Math.round(ms.getWinRate() * 434 / 100);
@@ -236,6 +235,12 @@ public class TelaResumoController implements Initializable {
 		}
 	}
 
+	private void initTblRivals() {
+		if (LIST_PLAYERS.isEmpty())
+			tblRivals();
+
+	}
+
 	private void initPlayers() {
 		PlayersList pl = new PlayersList();
 
@@ -246,7 +251,7 @@ public class TelaResumoController implements Initializable {
 	}
 
 	@SuppressWarnings("unchecked")
-	private void initTblRivals() {
+	private void tblRivals() {
 		tbRivals = new TableView<PlayersProperty>();
 
 		rivalColumn = new TableColumn<PlayersProperty, String>();
@@ -274,6 +279,8 @@ public class TelaResumoController implements Initializable {
 
 		initPlayers();
 		tbRivals.setItems(LIST_PLAYERS);
+
+		initTblLayout();
 	}
 
 	private void initTblLayout() {

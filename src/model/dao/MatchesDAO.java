@@ -38,7 +38,7 @@ public class MatchesDAO {
 		}
 	}
 
-	public static List<Match> read() {
+	public static List<Match> read(String sql) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -46,7 +46,7 @@ public class MatchesDAO {
 		List<Match> partidas = new ArrayList<>();
 
 		try {
-			stmt = con.prepareStatement("SELECT * FROM confrontos.partidas ORDER BY (data_partida, match_id) DESC");
+			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -73,115 +73,31 @@ public class MatchesDAO {
 		return partidas;
 	}
 
+	public static List<Match> readAll() {
+
+		String sql = "SELECT * FROM confrontos.partidas ORDER BY (data_partida, match_id) DESC";
+		return read(sql);
+
+	}
+
 	public static List<Match> readBiggestWin() {
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
 
-		List<Match> matches = new ArrayList<>();
-
-		try {
-			String sql = "SELECT * , RANK() OVER (ORDER BY (p.gols_feito - p.gols_concedidos) DESC) FROM confrontos.partidas p LIMIT 1";
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				Match m = new Match();
-
-				m.setDataPartida(rs.getDate("data_partida"));
-				m.setModoDeJogo(rs.getString("modo_de_jogo"));
-				m.setAdversario(rs.getString("adversario"));
-				m.setMeuTime(rs.getString("meu_time"));
-				m.setGolsFeito(rs.getInt("gols_feito"));
-				m.setGolsConcedido(rs.getInt("gols_concedidos"));
-				m.setTimeAdversario(rs.getString("time_adversario"));
-				m.setPenaltisGf(rs.getInt("penaltis_gf"));
-				m.setPenaltisGc(rs.getInt("penaltis_gc"));
-
-				matches.add(m);
-			}
-
-		} catch (SQLException e) {
-			Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, e);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-
-		return matches;
+		String sql = "SELECT * , RANK() OVER (ORDER BY (p.gols_feito - p.gols_concedidos) DESC) FROM confrontos.partidas p LIMIT 1";
+		return read(sql);
 	}
-	
+
 	public static List<Match> readWorstLoss() {
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
 
-		List<Match> matches = new ArrayList<>();
+		String sql = "SELECT * , RANK() OVER (ORDER BY (p.gols_feito - p.gols_concedidos)) FROM confrontos.partidas p LIMIT 1";
+		return read(sql);
 
-		try {
-			String sql = "SELECT * , RANK() OVER (ORDER BY (p.gols_feito - p.gols_concedidos)) FROM confrontos.partidas p LIMIT 1";
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				Match m = new Match();
-
-				m.setDataPartida(rs.getDate("data_partida"));
-				m.setModoDeJogo(rs.getString("modo_de_jogo"));
-				m.setAdversario(rs.getString("adversario"));
-				m.setMeuTime(rs.getString("meu_time"));
-				m.setGolsFeito(rs.getInt("gols_feito"));
-				m.setGolsConcedido(rs.getInt("gols_concedidos"));
-				m.setTimeAdversario(rs.getString("time_adversario"));
-				m.setPenaltisGf(rs.getInt("penaltis_gf"));
-				m.setPenaltisGc(rs.getInt("penaltis_gc"));
-
-				matches.add(m);
-			}
-
-		} catch (SQLException e) {
-			Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, e);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-
-		return matches;
 	}
-	
+
 	public static List<Match> readForm() {
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
 
-		List<Match> matches = new ArrayList<>();
-
-		try {
-			String sql = "SELECT * FROM confrontos.partidas p ORDER BY (p.data_partida, p.match_id) DESC LIMIT 5";
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				Match m = new Match();
-
-				m.setDataPartida(rs.getDate("data_partida"));
-				m.setModoDeJogo(rs.getString("modo_de_jogo"));
-				m.setAdversario(rs.getString("adversario"));
-				m.setMeuTime(rs.getString("meu_time"));
-				m.setGolsFeito(rs.getInt("gols_feito"));
-				m.setGolsConcedido(rs.getInt("gols_concedidos"));
-				m.setTimeAdversario(rs.getString("time_adversario"));
-				m.setPenaltisGf(rs.getInt("penaltis_gf"));
-				m.setPenaltisGc(rs.getInt("penaltis_gc"));
-
-				matches.add(m);
-			}
-
-		} catch (SQLException e) {
-			Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, e);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-
-		return matches;
+		String sql = "SELECT * FROM confrontos.partidas p ORDER BY (p.data_partida, p.match_id) DESC LIMIT 5";
+		return read(sql);
+		
 	}
 
 	public static void update(Match... p) {
